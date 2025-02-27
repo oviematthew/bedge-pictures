@@ -17,7 +17,8 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Bedge Pictures - Creative Perspective",
-  description: "Creative Wedding Photographer",
+  description:
+    "Bedge Pictures is a team of photographers, who push the boundaries by changing the way Nigerian weddings have traditionally been photographed. By doing so, we create images that stand out in today’s highly competitive wedding market.",
 };
 
 export default function RootLayout({ children }) {
