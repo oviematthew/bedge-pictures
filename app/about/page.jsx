@@ -7,5 +7,12 @@ export const metadata = {
 };
 
 export default function page() {
-  return <div>About Page</div>;
+  return (
+    <div
+      className="mt-15
+  "
+    >
+      About Page
+    </div>
+  );
 }
