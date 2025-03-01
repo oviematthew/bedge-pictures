@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 import { NavItem } from "../utils/NavItem";
+import { Dropdown } from "../utils/Dropdown";
 import { DropdownMobile } from "../utils/DropdownMobile";
 import { LinkItem } from "../utils/LinkItem";
 
@@ -25,16 +26,16 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav className="sticky top-0 left-0 w-full shadow-md z-2">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-gray-900">
+        <Link href="/">
           <Image src="/logo-black.png" width={60} height={30} alt="Logo" />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
-          <NavItem href="/" label="Home" active={pathname === "/"} />
+          <NavItem href="/" label="home" active={pathname === "/"} />
           <Dropdown
             label="Information"
             active={
@@ -126,27 +127,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-/* ✅ Dropdown for Desktop with fly-in animation */
-const Dropdown = ({ label, items, isOpen, toggle }) => (
-  <div className="relative">
-    <button
-      className={`flex items-center space-x-1  hover:text-gray-900`}
-      onClick={toggle}
-    >
-      <span>{label}</span>
-      <ChevronDown size={18} />
-    </button>
-    <div
-      className={`absolute left-0 w-48 bg-white shadow-md mt-2 rounded-md overflow-hidden transition-all duration-400 ease-in-out transform ${
-        isOpen ? "opacity-100 translate-y-0" : "hidden opacity-0 translate-y-4"
-      }`}
-    >
-      <div className="flex flex-col space-y-2 p-3">
-        {items.map(({ href, label }) => (
-          <LinkItem key={href} href={href} label={label} />
-        ))}
-      </div>
-    </div>
-  </div>
-);

@@ -4,13 +4,13 @@ import Link from "next/link";
 export const NavItem = ({ href, label, active }) => (
   <Link
     href={href}
-    className={`relative hover:text-gray-900 ${
-      active ? "text-gray-900" : "text-gray-600"
+    className={`relative italic font-poppins hover:font-bold ${
+      active ? "font-bold" : "font-regular"
     }`}
   >
     {label}
     {active && (
-      <span className="absolute bottom-[-3px] left-0 w-full h-[2px] bg-black"></span>
+      <span className="absolute bottom-[-3px] left-0 w-full h-[2px] bg-black dark:bg-white"></span>
     )}
   </Link>
 );

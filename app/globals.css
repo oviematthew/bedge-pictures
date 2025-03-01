@@ -3,3 +3,17 @@
 @tailwind utilities;
 
 
+@layer base {
+    :root {
+        --font-cormorant-garamond: "Cormorant Garamond", serif;
+        --font-poppins: "Poppins", sans-serif;
+    }
+}
+
+.font-cormorant {
+    font-family: var(--font-cormorant-garamond);
+}
+
+.font-poppins {
+    font-family: var(--font-poppins);
+}

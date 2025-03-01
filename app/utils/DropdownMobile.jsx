@@ -6,8 +6,8 @@ export const DropdownMobile = ({ label, items, isOpen, toggle, active }) => (
   <div className="flex flex-col items-center">
     <button
       className={`flex items-center space-x-1 ${
-        active ? "text-gray-900" : "text-gray-600"
-      } hover:text-gray-900`}
+        active ? "font-bold" : "font-thin"
+      } hover:font-bold`}
       onClick={toggle}
     >
       <span>{label}</span>

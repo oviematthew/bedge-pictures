@@ -1,6 +1,4 @@
 import { Cormorant_Garamond, Poppins } from "next/font/google";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
 import ThemeProviderWrapper from "./ThemeProviderWrapper";
 import "./globals.css";
 
@@ -28,12 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${cormorantGaramond.variable} ${poppins.variable} antialiased`}
       >
-        {/* ThemeProvider is moved to a separate Client Component */}
-        <ThemeProviderWrapper>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProviderWrapper>
+        <ThemeProviderWrapper>{children}</ThemeProviderWrapper>
       </body>
     </html>
   );
