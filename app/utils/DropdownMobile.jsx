@@ -10,7 +10,7 @@ export const DropdownMobile = ({ label, items, isOpen, toggle, active }) => (
       } hover:font-bold`}
       onClick={toggle}
     >
-      <span>{label}</span>
+      <span className="italic font-poppins hover:not-italic">{label}</span>
       <ChevronDown size={18} />
     </button>
     <div

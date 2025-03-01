@@ -4,7 +4,7 @@ import Link from "next/link";
 export const NavItem = ({ href, label, active }) => (
   <Link
     href={href}
-    className={`relative italic font-poppins hover:font-bold ${
+    className={`relative italic font-poppins hover:font-bold hover:not-italic ${
       active ? "font-bold" : "font-regular"
     }`}
   >

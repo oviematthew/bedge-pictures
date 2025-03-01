@@ -8,7 +8,7 @@ export const Dropdown = ({ label, items, isOpen, toggle }) => (
       className={`flex items-center space-x-1  hover:font-bold`}
       onClick={toggle}
     >
-      <span className="italic font-poppins">{label}</span>
+      <span className="italic font-poppins hover:not-italic">{label}</span>
       <ChevronDown size={18} />
     </button>
     <div

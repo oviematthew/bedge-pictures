@@ -37,37 +37,36 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-8 items-center">
           <NavItem href="/" label="home" active={pathname === "/"} />
           <Dropdown
-            label="Information"
+            label="information"
             active={
               pathname.includes("/about") ||
               pathname.includes("/faq") ||
               pathname.includes("/our-approach")
             }
             items={[
-              { href: "/about", label: "About" },
-              { href: "/faq", label: "FAQ" },
-              { href: "/our-approach", label: "Our Approach" },
+              { href: "/about", label: "about" },
+              { href: "/faq", label: "faq" },
+              { href: "/our-approach", label: "our approach" },
             ]}
             isOpen={dropdownOpen === "info"}
             toggle={() => toggleDropdown("info")}
           />
           <Dropdown
-            label="Portfolio"
+            label="portfolio"
             active={pathname.includes("/portfolio")}
             items={[
-              { href: "/portfolio/wedding", label: "Weddings" },
-              { href: "/portfolio/engagement", label: "Engagement" },
+              { href: "/portfolio/wedding", label: "wedding" },
+              { href: "/portfolio/engagement", label: "engagement" },
             ]}
             isOpen={dropdownOpen === "portfolio"}
             toggle={() => toggleDropdown("portfolio")}
           />
-          <NavItem href="/shop" label="Shop" active={pathname === "/shop"} />
-          <Link
+          <NavItem
             href="/contact"
-            className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"
-          >
-            Contact Us
-          </Link>
+            label="contact"
+            active={pathname === "/contact"}
+          />
+          <NavItem href="/shop" label="shop" active={pathname === "/shop"} />
 
           <ThemeToggle />
         </div>
@@ -99,9 +98,9 @@ export default function Navbar() {
         <DropdownMobile
           label="Information"
           items={[
-            { href: "/about", label: "About" },
-            { href: "/faq", label: "FAQ" },
-            { href: "/our-approach", label: "Our Approach" },
+            { href: "/about", label: "about" },
+            { href: "/faq", label: "fAQ" },
+            { href: "/our-approach", label: "our approach" },
           ]}
           isOpen={dropdownOpen === "info"}
           toggle={() => toggleDropdown("info")}
@@ -109,20 +108,15 @@ export default function Navbar() {
         <DropdownMobile
           label="Portfolio"
           items={[
-            { href: "/portfolio/wedding", label: "Weddings" },
-            { href: "/portfolio/engagement", label: "Engagement" },
+            { href: "/portfolio/wedding", label: "wedding" },
+            { href: "/portfolio/engagement", label: "engagement" },
           ]}
           isOpen={dropdownOpen === "portfolio"}
           toggle={() => toggleDropdown("portfolio")}
         />
-        <LinkItem href="/shop" label="Shop" onClick={toggleMenu} />
-        <Link
-          href="/contact"
-          className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition"
-          onClick={toggleMenu}
-        >
-          Contact Us
-        </Link>
+
+        <LinkItem href="/contact" label="contact" onClick={toggleMenu} />
+        <LinkItem href="/shop" label="shop" onClick={toggleMenu} />
       </div>
     </nav>
   );
