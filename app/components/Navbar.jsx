@@ -30,7 +30,21 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo-black.png" width={60} height={30} alt="Logo" />
+          <Image
+            className="dark:hidden"
+            src="/logo-black.png"
+            width={60}
+            height={40}
+            alt="Logo - Light Mode"
+          />
+
+          <Image
+            className="hidden dark:flex"
+            src="/logo-white.png"
+            width={60}
+            height={40}
+            alt="Logo - Dark Mode"
+          />
         </Link>
 
         {/* Desktop Menu */}
@@ -66,29 +80,40 @@ export default function Navbar() {
             label="contact"
             active={pathname === "/contact"}
           />
-          <NavItem href="/shop" label="shop" active={pathname === "/shop"} />
+          <NavItem
+            href="https://shop.bedgepictures.com"
+            label="shop"
+            active={pathname === "/shop"}
+          />
 
           <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="right-mobile items-center gap-3">
-          <ThemeToggle className="sm:flex md:hidden" />
-          <button className="md:hidden text-gray-900" onClick={toggleMenu}>
-            {isOpen ? <X size={30} /> : <Menu size={30} />}
+        <div className="right-mobile flex justify-center items-center gap-3 md:hidden ">
+          <ThemeToggle />
+          <button
+            className="md:hidden text-black dark:text-white"
+            onClick={toggleMenu}
+          >
+            {isOpen ? (
+              <X className="dark:bg-white" size={30} />
+            ) : (
+              <Menu size={30} />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-screen w-full bg-white z-40 transform ${
+        className={`fixed top-0 right-0 h-screen w-full bg-white dark:bg-black z-100 transform ${
           isOpen ? "translate-x-0" : "translate-x-[100%]"
         } transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8 text-xl font-medium`}
       >
         {/* Close Button (Top-Right) */}
         <button
-          className="absolute top-6 right-6 text-gray-900"
+          className="absolute top-6 right-6 text-black dark:text-white"
           onClick={toggleMenu}
         >
           <X size={35} />
@@ -99,7 +124,7 @@ export default function Navbar() {
           label="Information"
           items={[
             { href: "/about", label: "about" },
-            { href: "/faq", label: "fAQ" },
+            { href: "/faq", label: "faq" },
             { href: "/our-approach", label: "our approach" },
           ]}
           isOpen={dropdownOpen === "info"}
@@ -116,7 +141,11 @@ export default function Navbar() {
         />
 
         <LinkItem href="/contact" label="contact" onClick={toggleMenu} />
-        <LinkItem href="/shop" label="shop" onClick={toggleMenu} />
+        <LinkItem
+          href="https://shop.bedgepictures.com"
+          label="shop"
+          onClick={toggleMenu}
+        />
       </div>
     </nav>
   );
