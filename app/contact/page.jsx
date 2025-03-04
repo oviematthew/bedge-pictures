@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Navbar from "../components/Navbar";
-
 export const metadata = {
   title: "Contact - Bedge Pictures",
   description:
@@ -11,9 +9,7 @@ export const metadata = {
 export default function Contact() {
   return (
     <>
-      <Navbar />
       <h1 className="text-lg">Contact Page</h1>
-      <Image src="/favicon.ico" width={500} height={200} />
     </>
   );
 }

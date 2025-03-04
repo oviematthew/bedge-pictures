@@ -50,6 +50,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
           <NavItem href="/" label="home" active={pathname === "/"} />
+
           <Dropdown
             label="information"
             active={
@@ -59,11 +60,12 @@ export default function Navbar() {
             }
             items={[
               { href: "/about", label: "about" },
-              { href: "/faq", label: "faq" },
+              { href: "/faqs", label: "faqs" },
               { href: "/our-approach", label: "our approach" },
             ]}
             isOpen={dropdownOpen === "info"}
             toggle={() => toggleDropdown("info")}
+            onclick={toggleDropdown}
           />
           <Dropdown
             label="portfolio"
@@ -74,6 +76,7 @@ export default function Navbar() {
             ]}
             isOpen={dropdownOpen === "portfolio"}
             toggle={() => toggleDropdown("portfolio")}
+            onclick={toggleDropdown}
           />
           <NavItem
             href="/contact"
@@ -124,7 +127,7 @@ export default function Navbar() {
           label="Information"
           items={[
             { href: "/about", label: "about" },
-            { href: "/faq", label: "faq" },
+            { href: "/faqs", label: "faqs" },
             { href: "/our-approach", label: "our approach" },
           ]}
           isOpen={dropdownOpen === "info"}

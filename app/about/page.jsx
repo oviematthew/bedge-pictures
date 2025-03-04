@@ -11,9 +11,7 @@ export const metadata = {
 export default function About() {
   return (
     <>
-      <Navbar />
       <h1 className="text-lg">About Page</h1>
-      <Image src="/favicon.ico" width={500} height={200} />
     </>
   );
 }

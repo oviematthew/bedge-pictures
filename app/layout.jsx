@@ -1,6 +1,8 @@
 import { Cormorant_Garamond, Poppins } from "next/font/google";
 import ThemeProviderWrapper from "./ThemeProviderWrapper";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
@@ -26,7 +28,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${cormorantGaramond.variable} ${poppins.variable} antialiased`}
       >
-        <ThemeProviderWrapper>{children}</ThemeProviderWrapper>
+        <ThemeProviderWrapper>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProviderWrapper>
       </body>
     </html>
   );
