@@ -2,7 +2,14 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { LinkItem } from "./LinkItem";
 
 /* ✅ Dropdown for Mobile */
-export const DropdownMobile = ({ label, items, isOpen, toggle, active }) => (
+export const DropdownMobile = ({
+  label,
+  items,
+  isOpen,
+  toggle,
+  active,
+  onclick,
+}) => (
   <div className="flex flex-col items-center">
     <button
       className={`flex items-center space-x-1 ${
@@ -20,7 +27,7 @@ export const DropdownMobile = ({ label, items, isOpen, toggle, active }) => (
     >
       <div className="flex flex-col mt-2 space-y-2">
         {items.map(({ href, label }) => (
-          <LinkItem key={href} href={href} label={label} />
+          <LinkItem key={href} href={href} label={label} onClick={onclick} />
         ))}
       </div>
     </div>

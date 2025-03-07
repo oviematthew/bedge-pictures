@@ -25,8 +25,13 @@ export default function Navbar() {
     setDropdownOpen(null);
   }, [pathname]);
 
+  function closeMobileMenu() {
+    toggleMenu();
+    setDropdownOpen(null);
+  }
+
   return (
-    <nav className="sticky top-0 left-0 w-full shadow-md z-2">
+    <nav className="sticky top-0 left-0 w-full shadow-md z-100 bg-white dark:bg-black">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/">
@@ -61,6 +66,8 @@ export default function Navbar() {
             items={[
               { href: "/about", label: "about" },
               { href: "/faqs", label: "faqs" },
+              { href: "/blog", label: "blog" },
+              { href: "/wedding-stories", label: "wedding stories" },
               { href: "/our-approach", label: "our approach" },
             ]}
             isOpen={dropdownOpen === "info"}
@@ -83,11 +90,7 @@ export default function Navbar() {
             label="contact"
             active={pathname === "/contact"}
           />
-          <NavItem
-            href="https://shop.bedgepictures.com"
-            label="shop"
-            active={pathname === "/shop"}
-          />
+          <NavItem href="https://shop.bedgepictures.com" label="shop" />
 
           <ThemeToggle />
         </div>
@@ -122,16 +125,24 @@ export default function Navbar() {
           <X size={35} />
         </button>
 
-        <LinkItem href="/" label="Home" onClick={toggleMenu} />
+        <LinkItem
+          href="/"
+          label="Home"
+          active={pathname === "/"}
+          onClick={toggleMenu}
+        />
         <DropdownMobile
           label="Information"
           items={[
             { href: "/about", label: "about" },
             { href: "/faqs", label: "faqs" },
+            { href: "/blog", label: "blog" },
+            { href: "/wedding-stories", label: "wedding stories" },
             { href: "/our-approach", label: "our approach" },
           ]}
           isOpen={dropdownOpen === "info"}
           toggle={() => toggleDropdown("info")}
+          onclick={closeMobileMenu}
         />
         <DropdownMobile
           label="Portfolio"
@@ -141,14 +152,16 @@ export default function Navbar() {
           ]}
           isOpen={dropdownOpen === "portfolio"}
           toggle={() => toggleDropdown("portfolio")}
+          onclick={closeMobileMenu}
         />
 
-        <LinkItem href="/contact" label="contact" onClick={toggleMenu} />
         <LinkItem
-          href="https://shop.bedgepictures.com"
-          label="shop"
+          href="/contact"
+          active={pathname === "/contact"}
+          label="contact"
           onClick={toggleMenu}
         />
+        <LinkItem href="https://shop.bedgepictures.com" label="shop" />
       </div>
     </nav>
   );

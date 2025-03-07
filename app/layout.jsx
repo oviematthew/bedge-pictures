@@ -3,6 +3,7 @@ import ThemeProviderWrapper from "./ThemeProviderWrapper";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTopBtn from "./utils/ScrollToTopBtn";
 
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <ThemeProviderWrapper>
           <Navbar />
           {children}
+          <ScrollToTopBtn />
           <Footer />
         </ThemeProviderWrapper>
       </body>
