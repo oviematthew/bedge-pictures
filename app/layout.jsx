@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${cormorantGaramond.variable} ${poppins.variable} antialiased`}
+        className={`${cormorantGaramond.variable} ${poppins.variable} antialiased `}
       >
         <ThemeProviderWrapper>
           <Navbar />

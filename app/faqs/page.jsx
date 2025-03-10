@@ -1,6 +1,5 @@
-import Image from "next/image";
 import React from "react";
-import Navbar from "../components/Navbar";
+import Accordion from "../components/Accordion";
 
 export const metadata = {
   title: "FAQs - Bedge Pictures",
@@ -11,7 +10,9 @@ export const metadata = {
 export default function Faqs() {
   return (
     <>
-      <h1 className="text-lg">FAQs Page</h1>    
+      <Breadcrumb />
+      <h1 className="text-lg">FAQs Page</h1>
+      <Accordion />
     </>
   );
 }
