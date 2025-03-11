@@ -10,10 +10,16 @@ async function fetchPosts(slug) {
 }
 
 export default async function Post({ params }) {
-  const post = await fetchPosts(params.slug);
+  // fix dynamic route issues with newer nextjs dynamic routing by awaiting params first
+  const { slug } = await params;
 
+  // redirect to 404 if no slug
+  if (!slug) notFound();
+
+  const post = await fetchPosts(slug);
+
+  // redirect to 404 if no post
   if (!post) notFound();
-
   const htmlConverter = md.render(post.content);
 
   return (

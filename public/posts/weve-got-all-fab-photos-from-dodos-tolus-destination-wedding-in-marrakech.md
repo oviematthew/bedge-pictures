@@ -1,7 +1,10 @@
 ---
-title: " We’ve Got All Fab Photos from Dodos & Tolu’s Destination Wedding in Marrakech"
+title: "We’ve Got All Fab Photos from Dodos & Tolu’s 
+Destination Wedding in Marrakech"
 date: "2023-08-07"
-author: "bedge"
+excerpt: "Beauty Vlogger and makeup artist, Dodos, and her beau, Tolu are giving us the feels today"
+category: "blog-post"
+featuredImg: "/blog/dodos-featured.jpg"
 ---
 
 ## Beauty Vlogger and makeup artist, Dodos, and her beau, Tolu are giving us the feels today.
