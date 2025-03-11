@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import MarkdownIt from "markdown-it";
 import { getAllWeddingPosts } from "../../utils/WeddingStories";
 import Wedding from "../../portfolio/wedding/page";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const md = new MarkdownIt();
 
@@ -24,11 +26,26 @@ export default async function weddingPost({ params }) {
   const htmlConverter = md.render(weddingPost.content);
 
   return (
-    <article className="mb-5">
-      <h1>{weddingPost.title}</h1>
-      <p>{weddingPost.date}</p>
-      <p>{weddingPost.slug}</p>
-      <div dangerouslySetInnerHTML={{ __html: htmlConverter }} />
-    </article>
+    <div className="px-10 md:px-5 md:w-1/2 mx-auto mt-10">
+      <div className="flex justify-between mb-5">
+        <Link
+          href={"/wedding-stories"}
+          className="flex items-center gap-2 hover:scale-90"
+        >
+          <ArrowLeft />
+          <p className="font-poppins">go home</p>
+        </Link>
+
+        <p className="font-poppins">{weddingPost.date}</p>
+      </div>
+      <h1 className="text-center font-bold font-cormorant text-2xl md:text-5xl mb-7">
+        {weddingPost.title}
+      </h1>
+
+      <article
+        className="article"
+        dangerouslySetInnerHTML={{ __html: htmlConverter }}
+      />
+    </div>
   );
 }

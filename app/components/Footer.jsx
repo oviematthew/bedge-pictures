@@ -12,15 +12,16 @@ function Footer() {
             viewBox="0 0 1918 1"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="stroke-[#3E0D62] dark:stroke-white dark:opacity-80"
           >
             <line
-              x1="4.37114e-08"
+              x1="0"
               y1="0.5"
               x2="1918"
               y2="0.500168"
-              stroke="#3E0D62"
-              stroke-opacity="0.2"
-              stroke-dasharray="6 6"
+              stroke="currentColor"
+              strokeOpacity="0.2"
+              strokeDasharray="6 6"
             />
           </svg>
         </div>

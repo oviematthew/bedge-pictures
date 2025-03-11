@@ -18,3 +18,20 @@
     font-family: var(--font-poppins);
 }
 
+
+
+/* articles */
+.article {
+    @apply flex flex-col gap-3 font-poppins text-lg tracking-wide mb-2
+}
+.article > p > img {
+    @apply w-1/2 mx-auto
+}
+
+.article > h3 {
+    @apply text-base font-poppins
+}
+
+.article>h2 {
+    @apply text-xl font-poppins mt-5 font-semibold
+}

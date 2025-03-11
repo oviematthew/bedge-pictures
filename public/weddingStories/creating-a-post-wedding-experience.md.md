@@ -3,7 +3,7 @@ title: "Creating A Post - An Actual Wedding Experience"
 date: "2023-11-05"
 author: "bedge"
 excerpt: "You might be wondering, what a post-wedding photograph means. In brief words, it is a shoot that is taken after a wedding. Some people might think it is not necessary, considering the couple had already created memories on the wedding day. Well, it has its importance"
-category: "blog-post"
+category: "wedding-story"
 featuredImg: "/blog/creating-featured.jpg"
 ---
 
