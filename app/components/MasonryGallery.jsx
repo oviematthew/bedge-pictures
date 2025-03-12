@@ -89,7 +89,7 @@ export default function MasonryGallery({ folderPath }) {
       <Modal
         isOpen={selectedIndex !== null}
         onRequestClose={() => setSelectedIndex(null)}
-        className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80"
+        className="fixed inset-0 sm:top-5 flex items-center justify-center  bg-black bg-opacity-80"
       >
         {selectedIndex !== null && (
           <div
@@ -100,9 +100,9 @@ export default function MasonryGallery({ folderPath }) {
               <Image
                 src={allImages[selectedIndex].src}
                 alt={`Gallery Image ${selectedIndex}`}
-                width={320}
-                height={320}
-                className="w-full h-full object-contain"
+                width={300}
+                height={300}
+                className=" object-contain"
               />
 
               {/* Close Button */}

@@ -22,7 +22,7 @@ export default function ScrollToTopBtn() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-5 right-5 bg-black dark:bg-white text-white dark:text-black p-3 rounded-full shadow-lg hover:bg-gray-600 dark:hover:bg-gray-300 transition-all duration-300"
+      className="fixed z-10 bottom-5 right-5 bg-black dark:bg-white text-white dark:text-black p-3 rounded-full shadow-lg hover:bg-gray-600 dark:hover:bg-gray-300 transition-all duration-300"
       style={{ display: visible ? "block" : "none" }}
     >
       <ArrowUp size={24} />
