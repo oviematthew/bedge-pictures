@@ -65,21 +65,23 @@ export default function Blog() {
                       {post.category}
                     </a>
                   </div>
-                  <div className="group ">
-                    <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white font-poppins">
-                      <a href={`/posts/${post.slug}`}>{post.title}</a>
-                    </h3>
-                    <p className="mt-5 mb-5 font-poppins line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-400">
-                      <a href={`/posts/${post.slug}`}>{post.excerpt}</a>
-                    </p>
+                  <Link href={`/posts/${post.slug}`}>
+                    <div className="group ">
+                      <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 hover:text-gray-600 dark:text-white font-poppins">
+                        <a href={`/posts/${post.slug}`}>{post.title}</a>
+                      </h3>
+                      <p className="mt-5 mb-5 font-poppins line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-400">
+                        <a href={`/posts/${post.slug}`}>{post.excerpt}</a>
+                      </p>
 
-                    <Link
-                      href={`/posts/${post.slug}`}
-                      className="text-base font-semibold  text-gray-900 dark:text-white shadow-xs  italic hover:scale-110"
-                    >
-                      Read article
-                    </Link>
-                  </div>
+                      <Link
+                        href={`/posts/${post.slug}`}
+                        className="text-base font-semibold  text-gray-900 dark:text-white shadow-xs  italic hover:scale-110"
+                      >
+                        Read article
+                      </Link>
+                    </div>
+                  </Link>
                 </article>
               ))}
             </div>

@@ -35,3 +35,18 @@
 .article>h2 {
     @apply text-xl font-poppins mt-5 font-semibold
 }
+
+/* text color */
+.text-color {
+    color: black;
+}
+
+.dark .text-color {
+    color: white;
+}
+
+
+.gray-text-color{
+    color: gray;
+}
+
